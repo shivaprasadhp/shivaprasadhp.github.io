@@ -3,11 +3,7 @@ layout: default
 title: Case Studies
 ---
 
-# Case Studies
-
 Selected case studies showcasing product thinking, problem-solving, and execution.
-
-## Case Studies
 
 - **Money Guard**  
   Preventing subscription money leaks  
