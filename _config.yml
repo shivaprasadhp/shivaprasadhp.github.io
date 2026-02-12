@@ -3,6 +3,7 @@ description: Product-focused professional | Portfolio & Case Studies
 theme: minima
 header_pages:
   - index.md
+  - case-studies/index.md
   - about.md
   - experience.md
   - skills.md
