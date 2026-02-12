@@ -95,9 +95,207 @@ This case study is based on the following assumptions:
 
 These constraints and assumptions guide the solution toward a balanced trust layer that improves safety without sacrificing adoption or growth.
 ## Approach & Solution
+SureLock’s approach is built around resolving the trust–liquidity conflict without introducing full escrow or disrupting existing marketplace flows.
 
+Instead of locking funds, SureLock introduces a **configurable trust layer** that increases buyer confidence while preserving seller liquidity.
+
+---
+
+### 1. Partial Guarantee-Based Trust
+
+Rather than holding 100% of transaction value in escrow, SureLock enables marketplaces to offer **partial guarantees**. These guarantees act as a safety net for buyers in case of fraud or disputes, while allowing sellers to receive payouts without long delays.
+
+This approach:
+- Reduces buyer fear at checkout
+- Avoids liquidity lock-up for sellers
+- Keeps platforms flexible in how risk is shared
+
+---
+
+### 2. Platform-Controlled Risk Configuration
+
+SureLock allows marketplaces to define:
+- Guarantee coverage limits
+- Eligibility criteria (seller history, item type, price range)
+- Dispute resolution rules
+
+This ensures platforms retain **full control over risk policies**, rather than outsourcing trust decisions to a black-box system.
+
+---
+
+### 3. Seamless Integration into Existing Flows
+
+The trust layer is designed to sit **between discovery and payment** without altering core transaction mechanics.
+
+Key principles:
+- No forced changes to payment rails
+- No mandatory user behavior shifts
+- Minimal additional steps in checkout
+
+Trust signals are surfaced contextually, reinforcing confidence without adding friction.
+
+---
+
+### 4. Dispute Support & Resolution Enablement
+
+When disputes occur, SureLock supports structured resolution by:
+- Defining clear claim conditions
+- Enabling evidence-backed decisions
+- Reducing ambiguity in buyer–seller conflicts
+
+This leads to faster resolutions and more consistent outcomes across transactions.
+
+---
+
+Overall, SureLock reframes trust as a **graduated, configurable mechanism** rather than an all-or-nothing escrow decision—allowing marketplaces to unlock transactions at scale while managing risk responsibly.
 ## Key Decisions & Trade-offs
+Designing SureLock required navigating trade-offs between safety, liquidity, and platform adoption.
 
+---
+
+### Full Escrow vs Partial Guarantees
+
+**Decision:** Use partial guarantees instead of full escrow.
+
+**Trade-off:**
+- Full escrow maximizes buyer safety but blocks seller liquidity and reduces adoption
+- Partial guarantees lower risk sufficiently while keeping transactions fluid
+
+This decision prioritizes **marketplace participation and scalability** over absolute protection.
+
+---
+
+### Platform-Controlled Risk vs Centralized Enforcement
+
+**Decision:** Allow platforms to configure trust rules and coverage.
+
+**Trade-off:**
+- Centralized enforcement simplifies operations but removes platform autonomy
+- Configurable policies increase complexity but preserve control and flexibility
+
+SureLock chooses configurability to support diverse marketplace models.
+
+---
+
+### Trust Signals vs Checkout Friction
+
+**Decision:** Surface trust signals contextually without adding mandatory steps.
+
+**Trade-off:**
+- Stronger signals can reassure buyers but risk slowing conversion
+- Lightweight signals maintain flow but must be carefully designed to be credible
+
+The solution balances reassurance with speed to protect conversion rates.
+
+---
+
+### Coverage Limitation vs Universal Eligibility
+
+**Decision:** Restrict guarantees based on item type, value, and seller history.
+
+**Trade-off:**
+- Universal coverage simplifies messaging but exposes platforms to outsized risk
+- Eligibility rules reduce risk but require clear communication
+
+This ensures guarantees are **strategic rather than indiscriminate**.
+
+---
+
+### Trust Enablement vs Financial Intermediation
+
+**Decision:** Position SureLock as a trust enabler, not a payment intermediary.
+
+**Trade-off:**
+- Financial intermediation offers deeper control but introduces regulatory burden
+- Trust enablement avoids compliance complexity while still unlocking GMV
+
+This keeps SureLock lightweight, compliant, and easier to adopt.
 ## Outcome & Learnings
+SureLock reframes trust in C2C marketplaces from a binary escrow decision into a flexible, configurable mechanism that balances safety and liquidity.
+
+### Expected Outcomes
+
+If implemented, SureLock would enable marketplaces to:
+- Increase transaction completion by reducing buyer hesitation at checkout
+- Unlock transactional GMV without fully locking seller payouts
+- Reduce fraud-related losses through bounded, policy-driven guarantees
+- Improve seller participation by preserving liquidity and payout speed
+- Create a consistent trust experience without disrupting existing payment flows
+
+By avoiding full escrow, SureLock makes trust economically and operationally viable at scale.
+
+---
+
+### Key Learnings
+
+Working through this problem highlighted several important insights:
+
+- **Trust is contextual, not absolute**  
+  Buyers often need reassurance, not total protection.
+
+- **Liquidity is a first-order constraint**  
+  Any trust mechanism that delays payouts risks losing sellers entirely.
+
+- **One-size-fits-all trust does not scale**  
+  Marketplaces require configurable risk models tailored to item value, seller history, and category.
+
+- **Trust layers must be lightweight to succeed**  
+  Non-invasive solutions are far more likely to be adopted than deeply coupled systems.
+
+This case reinforced that trust infrastructure succeeds when it aligns incentives across buyers, sellers, and platforms—rather than favoring one side at the expense of others.
+
+---
 
 ## What I’d Do Next
+
+If SureLock were taken forward, the next phase would focus on validation, scalability, and ecosystem alignment.
+
+### 1. Pilot Partial Guarantees with Guardrails
+- Launch pilots with limited categories and price bands
+- Measure conversion lift, dispute rates, and guarantee utilization
+- Validate optimal coverage thresholds that balance trust and risk
+
+### 2. Expand Risk Configuration Capabilities
+- Introduce finer-grained controls for seller tenure, transaction history, and category risk
+- Enable marketplaces to iterate policies without engineering dependency
+
+### 3. Strengthen Dispute Resolution Tooling
+- Standardize claim workflows and resolution timelines
+- Improve transparency for buyers and sellers during disputes
+
+### 4. Explore Insurance & Partner Alignment
+- Work with insurers to underwrite guarantees more efficiently
+- Use structured data to reduce claim ambiguity and premium costs
+
+### 5. Gradual Monetization Testing
+- Introduce pricing models aligned with GMV unlocked or risk absorbed
+- Ensure monetization reinforces trust rather than creating friction
+
+The guiding principle would remain consistent:  
+**trust should enable transactions—not constrain them.**
+## What I’d Do Next
+If SureLock were taken forward beyond the initial rollout, the next phase would focus on validation, scale, and ecosystem alignment—without compromising liquidity or platform control.
+
+### 1. Validate Trust Lift vs Risk Exposure
+- Pilot partial guarantees across a small set of high-intent categories
+- Measure changes in checkout conversion, dispute rates, and guarantee claims
+- Identify the minimum guarantee coverage needed to meaningfully improve buyer confidence
+
+### 2. Refine Risk Segmentation
+- Introduce more granular eligibility rules based on seller tenure, transaction history, and item value
+- Continuously adjust coverage thresholds to balance fraud risk and GMV unlock
+
+### 3. Strengthen Dispute Resolution Workflows
+- Standardize dispute timelines and resolution criteria
+- Improve transparency for buyers and sellers during claim evaluation
+- Reduce manual intervention through clearer policy definitions
+
+### 4. Align with Insurance & Risk Partners
+- Explore underwriting partnerships to externalize a portion of guarantee risk
+- Use structured transaction and dispute data to improve claim defensibility and premium efficiency
+
+### 5. Test Sustainable Monetization Models
+- Experiment with pricing tied to GMV unlocked or guarantees utilized
+- Ensure monetization is directly correlated with value created for marketplaces
+
+The long-term goal would be to establish SureLock as a scalable trust layer that enables transactions to happen safely—without forcing marketplaces to choose between growth and liquidity.
