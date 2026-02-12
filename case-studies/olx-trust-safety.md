@@ -105,5 +105,3 @@ Key next steps would include:
 - Exploring optional protections or guarantees for transactions with elevated risk
 
 The long-term goal would be to strengthen confidence across the marketplace without compromising ease of use or scale.
-
-## What I’d Do Next
