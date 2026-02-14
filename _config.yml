@@ -2,9 +2,10 @@ title: Shivaprasad HP
 description: Product-focused professional | Portfolio & Case Studies
 theme: minima
 header_pages:
-  - index.md
+  header_pages:
   - case-studies/index.md
   - about.md
   - experience.md
   - skills.md
   - contact.md
+
