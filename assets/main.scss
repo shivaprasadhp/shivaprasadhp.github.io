@@ -117,6 +117,33 @@ h1, h2, h3 {
 a {
   color: #4f8cff;
 }
+/* Restore header layout */
+
+.site-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-header .wrapper {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-nav {
+  display: flex !important;
+  gap: 28px;
+}
+
+.site-nav .page-link {
+  color: #e5e7eb !important;
+  opacity: 0.85;
+}
+
+.site-nav .page-link:hover {
+  opacity: 1;
+}
+
 /* Remove default footer */
 .site-footer {
   display: none;
