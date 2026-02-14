@@ -5,9 +5,14 @@ title: Shivaprasad HP
 
 # Hi, I’m Shivaprasad 👋
 
-Product-focused professional transitioning into Product Management.
+I build structured, system-level product solutions that balance user trust, operational constraints, and business outcomes.
 
-I design structured, scalable solutions across fintech, marketplaces, enterprise systems, and quick-commerce.
+My work focuses on:
+- Designing scalable decision frameworks  
+- Solving high-impact marketplace and fintech problems  
+- Turning ambiguity into executable product strategy  
+
+Explore my case studies below.
 
 <div style="margin-top: 24px;">
   <a href="/case-studies/" style="
