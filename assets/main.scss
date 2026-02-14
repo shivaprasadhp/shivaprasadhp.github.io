@@ -117,3 +117,7 @@ h1, h2, h3 {
 a {
   color: #4f8cff;
 }
+/* Remove default footer */
+.site-footer {
+  display: none;
+}
