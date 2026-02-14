@@ -39,3 +39,29 @@
   font-weight: 500;
   text-decoration: none;
 }
+/* ---------- HEADER FIX ---------- */
+
+.site-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-header .wrapper {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-nav {
+  display: flex !important;
+  gap: 28px;
+}
+
+.site-nav .page-link {
+  color: #e5e7eb !important;
+  opacity: 0.85;
+}
+
+.site-nav .page-link:hover {
+  opacity: 1;
+}
