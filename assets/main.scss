@@ -3,28 +3,59 @@
 
 @import "{{ site.theme }}";
 
-/* Case Studies – Card Layout */
+/* ===== Case Studies – Premium Notion Style ===== */
 
 .case-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-top: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
 }
 
 .case-card {
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  padding: 20px;
-  background: #fff;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background: #fafafa;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #ececec;
+  transition: all 0.25s ease;
 }
 
 .case-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
 }
 
+/* Title */
 .case-card h3 {
   margin-top: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Subtitle */
+.case-card strong {
+  font-size: 16px;
+  display: block;
+  margin-top: 8px;
+}
+
+/* Description */
+.case-card p {
+  margin-top: 12px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Link */
+.case-card a {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.case-card a:hover {
+  opacity: 0.7;
 }
