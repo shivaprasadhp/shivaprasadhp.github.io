@@ -3,27 +3,50 @@
 
 @import "{{ site.theme }}";
 
-/* ===== Case Studies – Premium Notion Style ===== */
+/* ===== Global Dark Background ===== */
+
+body {
+  background-color: #0f1117;
+  color: #e6e6e6;
+}
+
+.site-header,
+.site-footer {
+  background-color: #0f1117;
+  border-bottom: 1px solid #1f232d;
+}
+
+a {
+  color: #7aa2ff;
+}
+
+a:hover {
+  color: #9dbbff;
+}
+
+/* ===== Case Studies Grid ===== */
 
 .case-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 32px;
-  margin-top: 40px;
+  margin-top: 48px;
 }
 
+/* ===== Card Styling ===== */
+
 .case-card {
-  background: #fafafa;
+  background: #161b22;
   border-radius: 16px;
   padding: 28px;
-  border: 1px solid #ececec;
+  border: 1px solid #222733;
   transition: all 0.25s ease;
 }
 
 .case-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  border-color: #2f3645;
 }
 
 /* Title */
@@ -31,6 +54,7 @@
   margin-top: 0;
   font-size: 22px;
   font-weight: 600;
+  color: #ffffff;
 }
 
 /* Subtitle */
@@ -38,12 +62,13 @@
   font-size: 16px;
   display: block;
   margin-top: 8px;
+  color: #cbd5e1;
 }
 
 /* Description */
 .case-card p {
   margin-top: 12px;
-  color: #555;
+  color: #9ca3af;
   line-height: 1.6;
 }
 
@@ -53,6 +78,7 @@
   margin-top: 16px;
   font-weight: 500;
   text-decoration: none;
+  color: #7aa2ff;
   transition: opacity 0.2s ease;
 }
 
