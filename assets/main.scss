@@ -85,3 +85,35 @@ a:hover {
 .case-card a:hover {
   opacity: 0.7;
 }
+
+/* ===== Dark Theme Base ===== */
+
+body {
+  background-color: #0f1117;
+  color: #e6edf3;
+}
+
+/* Navigation */
+.site-header {
+  background-color: #0f1117;
+  border-bottom: 1px solid #1f2937;
+}
+
+.site-title,
+.site-nav a {
+  color: #e6edf3 !important;
+}
+
+.site-nav a:hover {
+  color: #4f8cff !important;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+/* Links */
+a {
+  color: #4f8cff;
+}
