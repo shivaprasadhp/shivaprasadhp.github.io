@@ -2,39 +2,54 @@
 
 const EXPERIENCE = [
   {
-    company: 'Way.com Kerala',
-    role: 'Upsell Manager',
-    period: 'Jan 2022 – Jul 2024',
+    company: 'Independent PM — Career Transition',
+    location: 'Kerala',
+    role: 'AI PM Certification & Product Case Studies',
+    period: 'Jul 2024 – Present',
     bullets: [
-      'Managed upsell and retention across 30+ B2B partner accounts, driving conversion of free users to premium paid services and maintaining a 30–40% retention rate on at-risk accounts.',
-      'Acted as the voice of the customer internally — logged and escalated recurring product complaints and usability issues from partners, several of which fed into product team discussions and feature updates.',
-      'Owned client onboarding for new partners, identifying friction points in the process and working with internal teams to streamline activation workflows.',
+      'Completed AI Product Manager certification (HelloPM, 2026) and Generative AI Mastermind (OutSkill, 2025).',
+      'Built 4 end-to-end product case studies across fintech (Money Guard), marketplace trust (OLX), escrow infrastructure (SureLock), and quick commerce (Swiggy Instamart Society Mode).',
+      'Designed and shipped interactive prototypes using Lovable and Google AI Studio.',
     ],
   },
   {
-    company: 'Vedantu Kerala',
+    company: 'Way.com',
+    location: 'Kerala',
+    role: 'Growth & Retention Manager',
+    period: 'Jan 2022 – Jul 2024',
+    bullets: [
+      'Identified failure in confirmation email delivery across non-standard domains through user complaints and funnel analysis — partnered with internal teams to resolve, reducing repeat issue-related contacts.',
+      'Analyzed cancellation patterns through call audits, identified key drop-off drivers, and translated insights into a retention framework adopted by CX and fed as structured inputs into product discussions.',
+      'Identified untargeted app pitching as an adoption funnel friction point and redesigned the pitch around contextual triggers, improving conversion in the app install funnel.',
+    ],
+  },
+  {
+    company: 'Vedantu',
+    location: 'Kerala',
     role: 'Business Development Manager',
     period: 'Jan 2021 – Dec 2021',
     bullets: [
-      'Consistently exceeded sales quota through consultative conversations with students and parents, developing a strong instinct for understanding user motivations and decision barriers.',
-      'Tracked CRM funnel data to spot drop-off patterns and flagged recurring objections to the team, contributing to process improvements in the conversion workflow.',
+      'Identified recurring drop-off patterns across pricing, trust, and feature gaps through 40+ monthly product demo audits — structured findings into a feedback framework guiding the sales team on customer decision barriers.',
+      'Translated structured product friction insights from demo audits to management, ensuring customer signals were consistently documented and fed into product improvement discussions.',
     ],
   },
   {
-    company: 'Extramarks Education Bangalore',
+    company: 'Extramarks Education',
+    location: 'Bangalore',
     role: 'Assistant Manager',
     period: 'Jun 2019 – Dec 2020',
     bullets: [
-      'Led sales and client onboarding for an edtech platform, gathering structured feedback from 300+ users on usability issues — findings contributed to an update of the onboarding process.',
-      'Supported training initiatives for new team members on product knowledge and sales processes.',
+      'Managed a team of 10 across product demos and user feedback collection while coordinating cross-functionally between sales, logistics, and operations.',
+      'Standardized how customer insights were captured and escalated, contributing to onboarding process improvements across the platform.',
     ],
   },
   {
-    company: "BYJU'S Bangalore",
+    company: "BYJU'S",
+    location: 'Bangalore',
     role: 'Business Development Associate',
     period: 'Aug 2018 – May 2019',
     bullets: [
-      'Conducted 150+ product demos and consultative sales calls, building deep familiarity with user learning preferences and common adoption challenges.',
+      'Analyzed user behavior across 150+ product demos, identifying recurring objections and feeding structured insights into the sales and product feedback process.',
     ],
   },
 ];
@@ -47,7 +62,7 @@ export default function Experience() {
         <div className="section-grid" style={{ marginBottom: '4rem' }}>
           <div className="section-label-col fade-up">Experience</div>
           <h2 className="section-heading fade-up delay-1">
-            Where I've<br /><em>been.</em>
+            Where I&apos;ve<br /><em>been.</em>
           </h2>
         </div>
 
@@ -56,6 +71,7 @@ export default function Experience() {
             <div key={e.company} className={`exp-row fade-up delay-${(i % 3) + 1}`}>
               <div>
                 <div className="exp-co">{e.company}</div>
+                {e.location && <div className="exp-location">{e.location}</div>}
                 <div className="exp-role-label">{e.role}</div>
               </div>
               <ul className="exp-bullets">

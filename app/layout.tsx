@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Shivaprasad HP — Product Manager',
-  description: 'Product Manager | User Discovery · Fintech · Marketplaces',
+  title: 'Shivaprasad HP — PM Portfolio',
+  description: 'Product-minded professional | 0→1 Thinking · User Discovery · Fintech · Marketplaces',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

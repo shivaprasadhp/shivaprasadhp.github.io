@@ -9,7 +9,7 @@ export default function Contact() {
           open to the<br />right <em>opportunity.</em>
         </h2>
         <p className="contact-sub fade-up delay-2">
-          Looking for product roles where discovery and empathy matter. Let's talk.
+          Looking for product roles where discovery and empathy matter. Let&apos;s talk.
         </p>
         <div className="contact-links-row fade-up delay-3">
           <a href="mailto:shivaprasadhp@yahoo.com" className="contact-email">
