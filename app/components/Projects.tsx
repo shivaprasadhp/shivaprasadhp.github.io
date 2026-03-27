@@ -1,18 +1,18 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const PROJECTS = [
   {
     index: '01',
-    role: 'Product Case Study',
-    domainType: 'Fintech',
     productType: 'Consumer Feature',
-    domain: 'Fintech · Personal Finance',
     title: 'Money Guard',
     desc: 'Most people don\'t know what they\'re paying for. I designed a fix.',
     slug: 'money-guard',
+    thumbnail: '/images/thumb-money-guard.png',
     tags: ['Fintech', 'UX', 'Retention'],
+    metrics: ['DAU retention', 'Alert CTR', 'Subscription cancellation rate'],
     prototypeUrl: 'https://ai.studio/apps/drive/1DLlQP3prwFAPYY49cRBBPqr22LZxnK7T?fullscreenApplet=true',
     tiles: [
       { label: 'Problem', value: 'Silent subscriptions draining users monthly — 63–75% unaware' },
@@ -21,14 +21,13 @@ const PROJECTS = [
   },
   {
     index: '02',
-    role: 'Product Case Study',
-    domainType: 'Trust & Safety',
     productType: 'Platform Feature',
-    domain: 'Trust & Safety · Marketplace',
     title: 'OLX Trust & Safety',
     desc: 'P2P fraud was killing buyer confidence. I redesigned trust from the ground up.',
     slug: 'olx-trust-safety',
+    thumbnail: '/images/thumb-olx-trust-safety.png',
     tags: ['Marketplace', 'Trust', 'Payments'],
+    metrics: ['Dispute rate', 'Successful transaction %', 'Trust score adoption'],
     prototypeUrl: '',
     tiles: [
       { label: 'Problem', value: 'High fraud rates eroding confidence in every transaction' },
@@ -37,14 +36,13 @@ const PROJECTS = [
   },
   {
     index: '03',
-    role: 'Product Case Study',
-    domainType: 'Trust & Safety',
     productType: 'Platform Feature',
-    domain: 'Enterprise Security',
     title: 'SureLock',
     desc: 'High-value P2P trades had zero protection. I built the trust layer.',
     slug: 'surelock',
+    thumbnail: '/images/thumb-surelock.png',
     tags: ['Escrow', 'B2B', 'Security'],
+    metrics: ['Escrow adoption rate', 'Dispute resolution time', 'Payment release accuracy'],
     prototypeUrl: 'https://escrow-buddy-modes.lovable.app',
     tiles: [
       { label: 'Problem', value: 'Payments released before delivery — no recourse for buyers' },
@@ -53,14 +51,13 @@ const PROJECTS = [
   },
   {
     index: '04',
-    role: 'Product Case Study',
-    domainType: 'Logistics',
     productType: 'Growth Strategy',
-    domain: 'Quick Commerce · Logistics',
     title: 'Swiggy Instamart — Society Mode',
     desc: 'Dark stores were bleeding money on last-mile. I rethought the model.',
     slug: 'swiggy-instamart',
+    thumbnail: '/images/thumb-swiggy-instamart.png',
     tags: ['Hyperlocal', 'Unit Economics', 'Strategy'],
+    metrics: ['Cost per delivery', 'Cluster order density', 'Delivery time per zone'],
     prototypeUrl: '',
     tiles: [
       { label: 'Problem', value: 'Per-delivery costs unsustainable in dense residential clusters' },
@@ -86,32 +83,45 @@ export default function Projects() {
         <div className="projects-cards">
           {PROJECTS.map((p, i) => (
             <div key={p.title} className={`project-card fade-up delay-${(i % 3) + 1}`}>
-              <div className="project-card-header">
 
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <span className="project-index">{p.index}</span>
-                    <span className="project-domain">{p.domain}</span>
-                  </div>
+              {/* Thumbnail */}
+              <div className="project-thumbnail">
+                <Image
+                  src={p.thumbnail}
+                  alt={`${p.title} thumbnail`}
+                  width={600}
+                  height={338}
+                  className="project-thumbnail-img"
+                  priority={i < 2}
+                />
+              </div>
 
-                  <div className="project-domain">
-                    {p.role} · {p.domainType} · {p.productType}
-                  </div>
-                </div>
-
+              {/* Tags + product type badge */}
+              <div className="project-card-meta">
                 <div className="project-tags">
                   {p.tags.map((t) => (
                     <span key={t} className="project-tag">{t}</span>
                   ))}
                 </div>
-
+                <span className="project-type-badge">{p.productType}</span>
               </div>
 
+              {/* Description */}
               <div className="project-card-body">
-                <div className="project-title">{p.title}</div>
                 <p className="project-desc">{p.desc}</p>
               </div>
 
+              {/* Metrics */}
+              <div className="project-metrics">
+                <span className="project-metrics-label">Metrics</span>
+                <div className="project-metrics-pills">
+                  {p.metrics.map((m) => (
+                    <span key={m} className="project-metric-pill">{m}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Problem + Impact */}
               <div className="project-tiles">
                 {p.tiles.map((tile) => (
                   <div key={tile.label} className="project-tile">
@@ -121,6 +131,7 @@ export default function Projects() {
                 ))}
               </div>
 
+              {/* Actions */}
               <div className="project-card-actions">
                 <button
                   className="btn-primary"

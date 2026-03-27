@@ -5,7 +5,7 @@ const EXPERIENCE = [
     company: 'Independent PM — Career Transition',
     location: 'Kerala',
     role: 'AI PM Certification & Product Case Studies',
-    period: 'Jul 2024 – Present',
+    period: 'Aug 2024 – Present',
     bullets: [
       'Completed AI Product Manager certification (HelloPM, 2026) and Generative AI Mastermind (OutSkill, 2025).',
       'Built 4 end-to-end product case studies across fintech (Money Guard), marketplace trust (OLX), escrow infrastructure (SureLock), and quick commerce (Swiggy Instamart Society Mode).',
