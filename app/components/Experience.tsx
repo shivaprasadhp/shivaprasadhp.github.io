@@ -1,6 +1,15 @@
 'use client';
 
-const EXPERIENCE = [
+type ExperienceEntry = {
+  company: string;
+  location: string;
+  role: string;
+  period: string;
+  bullets: string[];
+  reflection: string;
+};
+
+const EXPERIENCE: ExperienceEntry[] = [
   {
     company: 'Independent PM — Career Transition',
     location: 'Kerala',
@@ -11,6 +20,7 @@ const EXPERIENCE = [
       'Built 4 end-to-end product case studies across fintech (Money Guard), marketplace trust (OLX), escrow infrastructure (SureLock), and quick commerce (Swiggy Instamart Society Mode).',
       'Designed and shipped interactive prototypes using Lovable and Google AI Studio.',
     ],
+    reflection: "Choosing to build in public rather than just apply — because case studies that ship are more credible than slide decks that don't.",
   },
   {
     company: 'Way.com',
@@ -22,6 +32,7 @@ const EXPERIENCE = [
       'Analyzed cancellation patterns through call audits, identified key drop-off drivers, and translated insights into a retention framework adopted by CX and fed as structured inputs into product discussions.',
       'Identified untargeted app pitching as an adoption funnel friction point and redesigned the pitch around contextual triggers, improving conversion in the app install funnel.',
     ],
+    reflection: 'This is where I learned that product feedback loops only work if someone does the hard work of translating user signals into structured inputs — and I made that my job.',
   },
   {
     company: 'Vedantu',
@@ -32,6 +43,7 @@ const EXPERIENCE = [
       'Identified recurring drop-off patterns across pricing, trust, and feature gaps through 40+ monthly product demo audits — structured findings into a feedback framework guiding the sales team on customer decision barriers.',
       'Translated structured product friction insights from demo audits to management, ensuring customer signals were consistently documented and fed into product improvement discussions.',
     ],
+    reflection: 'Taught me how to find patterns in qualitative noise — 40+ demos a month is a lot of signal if you know what to listen for.',
   },
   {
     company: 'Extramarks Education',
@@ -42,6 +54,7 @@ const EXPERIENCE = [
       'Managed a team of 10 across product demos and user feedback collection while coordinating cross-functionally between sales, logistics, and operations.',
       'Standardized how customer insights were captured and escalated, contributing to onboarding process improvements across the platform.',
     ],
+    reflection: "Running a team while staying close to users taught me that good process and good empathy aren't in conflict — they reinforce each other.",
   },
   {
     company: "BYJU'S",
@@ -51,6 +64,7 @@ const EXPERIENCE = [
     bullets: [
       'Analyzed user behavior across 150+ product demos, identifying recurring objections and feeding structured insights into the sales and product feedback process.',
     ],
+    reflection: 'Where it started — sitting across from users every day and noticing that the same friction kept showing up. That pattern-recognition instinct never left.',
   },
 ];
 
@@ -74,11 +88,24 @@ export default function Experience() {
                 {e.location && <div className="exp-location">{e.location}</div>}
                 <div className="exp-role-label">{e.role}</div>
               </div>
-              <ul className="exp-bullets">
-                {e.bullets.map((b, j) => (
-                  <li key={j}>{b}</li>
-                ))}
-              </ul>
+              <div>
+                <ul className="exp-bullets">
+                  {e.bullets.map((b, j) => (
+                    <li key={j}>{b}</li>
+                  ))}
+                </ul>
+                <p style={{
+                  marginTop: '0.85rem',
+                  fontSize: '0.8rem',
+                  fontStyle: 'italic',
+                  color: 'var(--text2)',
+                  lineHeight: 1.6,
+                  borderLeft: '2px solid var(--border)',
+                  paddingLeft: '0.75rem',
+                }}>
+                  {e.reflection}
+                </p>
+              </div>
               <span className="exp-period">{e.period}</span>
             </div>
           ))}

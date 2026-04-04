@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 const CYCLE_WORDS = [
   'PRODUCT THINKING',
   'SYSTEMS DESIGN',
@@ -27,29 +25,61 @@ const STATS = [
   { num: '2', label: 'Certifications', sub: 'AI PM · HelloPM 2026 + Gen AI Mastermind · OutSkill' },
 ];
 
-const CERTS = [
-  { name: 'AI Product Manager', issuer: 'HelloPM · 2026', badge: 'Certified' },
-  { name: 'Generative AI Mastermind', issuer: 'OutSkill · 2025', badge: 'Certified' },
-  { name: 'MBA — International Business', issuer: 'LPU · 2016–2018', badge: 'Degree' },
+const TOOLS = [
+  { name: 'Figma',       icon: '⬡' },
+  { name: 'Notion',      icon: '◻' },
+  { name: 'Mixpanel',    icon: '◈' },
+  { name: 'ChatGPT',     icon: '◎' },
+  { name: 'Claude',      icon: '◇' },
+  { name: 'LM Studio',   icon: '◆' },
+  { name: 'Lovable',     icon: '◉' },
+  { name: 'GA4',         icon: '◐' },
+  { name: 'Amplitude',   icon: '▷' },
+  { name: 'Jira',        icon: '◳' },
+  { name: 'Slack',       icon: '◑' },
+  { name: 'ChatPRD',     icon: '◁' },
 ];
 
 export default function Hero() {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimating(true);
-      setTimeout(() => {
-        setWordIndex((i) => (i + 1) % CYCLE_WORDS.length);
-        setAnimating(false);
-      }, 400);
-    }, 2200);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section id="hero">
+
+      {/* ── VERTICAL TICKER — fixed left side ── */}
+      <div style={{
+        position: 'fixed',
+        left: 0,
+        top: 0,
+        bottom: 0,
+        width: '2rem',
+        zIndex: 50,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        pointerEvents: 'none',
+      }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1.5rem',
+          transform: 'rotate(-90deg)',
+          whiteSpace: 'nowrap',
+          animation: 'vticker 20s linear infinite',
+        }}>
+          {[...CYCLE_WORDS, ...CYCLE_WORDS].map((w, i) => (
+            <span key={i} style={{
+              fontFamily: 'var(--font-condensed)',
+              fontSize: '0.55rem',
+              fontWeight: 700,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: 'var(--text3)',
+            }}>
+              {w}
+              <span style={{ color: 'var(--accent)', marginLeft: '1.5rem' }}>✦</span>
+            </span>
+          ))}
+        </div>
+      </div>
 
       {/* ── FULL SCREEN HERO ── */}
       <div style={{
@@ -150,7 +180,6 @@ export default function Hero() {
           {/* RIGHT — positioning text + CTAs */}
           <div style={{ paddingLeft: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
 
-            {/* Profile pic */}
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1.5rem' }}>
               <div style={{ width: '180px', height: '220px', overflow: 'hidden', flexShrink: 0 }}>
                 <img
@@ -192,43 +221,71 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── BOTTOM — cycling giant word ── */}
+        {/* ── BOTTOM — tools marquee ── */}
         <div style={{
           borderTop: '1px solid var(--border)',
           overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: '140px',
           background: 'var(--surface)',
+          padding: '1.5rem 0',
           position: 'relative',
         }}>
-          {/* subtle red left bar accent */}
           <div style={{
             position: 'absolute',
             left: 0, top: 0, bottom: 0,
             width: '4px',
             background: 'var(--accent)',
           }} />
-          <span style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(4rem, 10vw, 9rem)',
-            letterSpacing: '0.04em',
+
+          {/* label */}
+          <p style={{
+            fontFamily: 'var(--font-condensed)',
+            fontSize: '0.55rem',
+            fontWeight: 700,
+            letterSpacing: '0.2em',
             textTransform: 'uppercase',
-            color: 'var(--text)',
-            lineHeight: 1,
-            opacity: animating ? 0 : 1,
-            transform: animating ? 'translateY(16px)' : 'translateY(0)',
-            transition: 'opacity 0.35s ease, transform 0.35s ease',
-            whiteSpace: 'nowrap',
-          }}>
-            {CYCLE_WORDS[wordIndex]}
-          </span>
+            color: 'var(--text3)',
+            textAlign: 'center',
+            marginBottom: '1rem',
+          }}>Tools & Stack</p>
+
+          {/* scrolling icons row */}
+          <div style={{ overflow: 'hidden', position: 'relative' }}>
+            <div style={{
+              display: 'flex',
+              gap: '3rem',
+              animation: 'toolscroll 22s linear infinite',
+              width: 'max-content',
+            }}>
+              {[...TOOLS, ...TOOLS].map((t, i) => (
+                <div key={i} style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  flexShrink: 0,
+                }}>
+                  <span style={{
+                    fontSize: '1.4rem',
+                    color: 'var(--text2)',
+                    lineHeight: 1,
+                  }}>{t.icon}</span>
+                  <span style={{
+                    fontFamily: 'var(--font-condensed)',
+                    fontSize: '0.6rem',
+                    fontWeight: 600,
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: 'var(--text3)',
+                  }}>{t.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
       </div>
 
-      {/* ── STATS + CERTS ── */}
+      {/* ── STATS ── */}
       <div className="container" style={{ scrollMarginTop: '6rem' }}>
         <div className="hero-bottom-grid fade-up delay-1">
           <div className="hero-stats">
@@ -242,20 +299,6 @@ export default function Hero() {
               </div>
             ))}
           </div>
-          <div className="hero-certs">
-            <p className="cert-title">Certifications & Education</p>
-            <div className="cert-cards">
-              {CERTS.map((c) => (
-                <div key={c.name} className="cert-card">
-                  <div className="cert-info">
-                    <span className="cert-name">{c.name}</span>
-                    <span className="cert-issuer">{c.issuer}</span>
-                  </div>
-                  <span className="cert-badge">{c.badge}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
@@ -263,6 +306,14 @@ export default function Hero() {
         @keyframes dot-pulse {
           0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(34,197,94,0.7); }
           50% { opacity: 0.4; box-shadow: 0 0 3px rgba(34,197,94,0.3); }
+        }
+        @keyframes vticker {
+          0%   { transform: rotate(-90deg) translateX(0); }
+          100% { transform: rotate(-90deg) translateX(-50%); }
+        }
+        @keyframes toolscroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
         .hero-stat-text {
           display: flex;
