@@ -28,7 +28,7 @@ export default function About() {
             </p>
             <p className="about-bio">
               My work sits at the intersection of <strong>product thinking and operational reality</strong>. 
-              I've built 0→1 concepts across fintech, marketplace trust, and quick commerce — 
+              I&apos;ve built 0→1 concepts across fintech, marketplace trust, and quick commerce — 
               from problem framing to prototype. Currently pursuing PM roles where 
               <strong> discovery and systems thinking</strong> are valued over feature velocity.
             </p>

@@ -3,7 +3,22 @@
 
 import Image from 'next/image';
 
-const PROJECTS = [
+type Project = {
+  index: string;
+  productType: string;
+  title: string;
+  desc: string;
+  slug: string;
+  thumbnail: string;
+  tags: string[];
+  metrics: string[];
+  prototypeUrl: string;
+  tiles: { label: string; value: string }[];
+  accentColor?: string;
+  externalUrl?: string;
+};
+
+const PROJECTS: Project[] = [
   {
     index: '01',
     productType: 'Consumer Feature',
@@ -152,9 +167,9 @@ export default function Projects() {
               <div className="project-card-actions">
                 <button
                   className="btn-primary"
-                  onClick={() => { window.location.href = (p as any).externalUrl || `/case-studies/${p.slug}` }}
+                  onClick={() => { window.location.href = p.externalUrl || `/case-studies/${p.slug}`; }}
                 >
-                  {(p as any).externalUrl ? "View presentation →" : "Read case study →"}
+                  {p.externalUrl ? "View presentation →" : "Read case study →"}
                 </button>
 
                 {p.prototypeUrl && (
