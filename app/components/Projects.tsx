@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+
 import Image from 'next/image';
 
 const PROJECTS = [
@@ -51,6 +51,23 @@ const PROJECTS = [
   },
   {
     index: '04',
+    productType: 'Dev Tool / AI',
+    title: 'Local AI Agent Orchestrator',
+    desc: 'Enterprise AI tools demanded 10GB of bloatware. I built a private, zero-cost alternative from source.',
+    slug: 'local-ai-agent-orchestrator',
+    thumbnail: '/images/thumb-local-ai-agent.png',
+    tags: ['AI', 'Privacy', 'DevTools'],
+    metrics: ['Installation footprint', 'API cost', 'Data leakage'],
+    accentColor: '#F5E642',
+    prototypeUrl: '',
+    externalUrl: 'https://gamma.app/public/n148ya7ctexkuqd',
+    tiles: [
+      { label: 'Problem', value: 'Standard AI coding agents required 6GB+ MSVC install — incompatible with a multi-language monorepo environment' },
+      { label: 'Impact', value: '95% footprint reduction (10GB+ → <500MB), zero cloud dependency, $0/month running cost' },
+    ],
+  },
+  {
+    index: '05',
     productType: 'Growth Strategy',
     title: 'Swiggy Instamart — Society Mode',
     desc: 'Dark stores were bleeding money on last-mile. I rethought the model.',
@@ -67,7 +84,7 @@ const PROJECTS = [
 ];
 
 export default function Projects() {
-  const router = useRouter();
+  
 
   return (
     <section id="projects" className="section-pad">
@@ -135,9 +152,9 @@ export default function Projects() {
               <div className="project-card-actions">
                 <button
                   className="btn-primary"
-                  onClick={() => router.push(`/case-studies/${p.slug}`)}
+                  onClick={() => { window.location.href = (p as any).externalUrl || `/case-studies/${p.slug}` }}
                 >
-                  Read case study →
+                  {(p as any).externalUrl ? "View presentation →" : "Read case study →"}
                 </button>
 
                 {p.prototypeUrl && (

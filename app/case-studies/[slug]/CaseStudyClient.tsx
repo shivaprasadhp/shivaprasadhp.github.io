@@ -15,6 +15,10 @@ const CASE_STUDIES: Record<string, { title: string; embedUrl: string }> = {
     title: 'SureLock',
     embedUrl: 'https://gamma.app/embed/x8ull73d8vh52zu',
   },
+  'local-ai-agent-orchestrator': {
+    title: 'Local AI Agent Orchestrator',
+    embedUrl: 'https://gamma.app/embed/n148ya7ctexkuqd',
+  },
   'swiggy-instamart': {
     title: 'Swiggy Instamart',
     embedUrl: 'https://gamma.app/embed/1nj9afa2eo5lg8k',
@@ -25,7 +29,8 @@ const CASE_ORDER = [
   'money-guard',
   'olx-trust-safety',
   'surelock',
-  'swiggy-instamart'
+  'local-ai-agent-orchestrator',
+  'swiggy-instamart',
 ];
 
 export default function CaseStudyClient({ slug }: { slug: string }) {
@@ -38,17 +43,19 @@ export default function CaseStudyClient({ slug }: { slug: string }) {
 
   if (!study) {
     return (
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '100vh',
-        background: '#0a0a0f',
-        color: '#ece9f5',
-        fontFamily: "'DM Sans', sans-serif",
-        gap: '1.5rem',
-      }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100vh',
+          background: '#0a0a0f',
+          color: '#ece9f5',
+          fontFamily: "'DM Sans', sans-serif",
+          gap: '1.5rem',
+        }}
+      >
         <p style={{ color: '#6b6880', fontSize: '0.9rem' }}>Case study not found.</p>
         <button
           onClick={() => router.back()}
@@ -70,25 +77,29 @@ export default function CaseStudyClient({ slug }: { slug: string }) {
   }
 
   return (
-    <div style={{
-      position: 'fixed',
-      inset: 0,
-      background: '#0a0a0f',
-      display: 'flex',
-      flexDirection: 'column',
-      zIndex: 9999,
-    }}>
-      <div style={{
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: '#0a0a0f',
         display: 'flex',
-        alignItems: 'center',
-        gap: '1.25rem',
-        padding: '1rem 2rem',
-        background: 'rgba(10,10,15,0.95)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        borderBottom: '1px solid rgba(255,255,255,0.07)',
-        flexShrink: 0,
-      }}>
+        flexDirection: 'column',
+        zIndex: 9999,
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1.25rem',
+          padding: '1rem 2rem',
+          background: 'rgba(10,10,15,0.95)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderBottom: '1px solid rgba(255,255,255,0.07)',
+          flexShrink: 0,
+        }}
+      >
         <button
           onClick={() => router.back()}
           style={{
@@ -105,13 +116,13 @@ export default function CaseStudyClient({ slug }: { slug: string }) {
             fontFamily: "'DM Sans', sans-serif",
             transition: 'color 0.2s, border-color 0.2s',
           }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLButtonElement).style.color = '#ece9f5';
-            (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.2)';
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = '#ece9f5';
+            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
           }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLButtonElement).style.color = '#6b6880';
-            (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.08)';
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = '#6b6880';
+            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
           }}
         >
           ← back
@@ -135,12 +146,14 @@ export default function CaseStudyClient({ slug }: { slug: string }) {
           </button>
         )}
 
-        <span style={{
-          fontFamily: "'DM Serif Display', serif",
-          fontStyle: 'italic',
-          fontSize: '1rem',
-          color: '#ece9f5',
-        }}>
+        <span
+          style={{
+            fontFamily: "'DM Serif Display', serif",
+            fontStyle: 'italic',
+            fontSize: '1rem',
+            color: '#ece9f5',
+          }}
+        >
           {study.title}
         </span>
 

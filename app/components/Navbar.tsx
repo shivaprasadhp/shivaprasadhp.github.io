@@ -36,7 +36,7 @@ export default function Navbar() {
             {links.map(({ href, label, icon: Icon }) => (
               <li key={href}>
                 <a href={href} onClick={(e) => scrollTo(e, href)}>
-                  <Icon size={14} />
+                  <Icon size={16} style={{ opacity: 1, color: 'var(--text2)' }} />
                   {label}
                 </a>
               </li>

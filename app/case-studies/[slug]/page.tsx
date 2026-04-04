@@ -4,7 +4,8 @@ const CASE_ORDER = [
   'money-guard',
   'olx-trust-safety',
   'surelock',
-  'swiggy-instamart'
+  'local-ai-agent-orchestrator',
+  'swiggy-instamart',
 ];
 
 export function generateStaticParams() {
