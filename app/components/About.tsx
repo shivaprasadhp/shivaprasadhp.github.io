@@ -12,6 +12,7 @@ export default function About() {
     <section id="about" className="section-pad" style={{ scrollMarginTop: '6rem' }}>
       <div className="container">
 
+        {/* ── HEADER ROW ── */}
         <div className="section-grid" style={{ marginBottom: '4rem' }}>
           <div className="section-label-col fade-up">About</div>
           <h2 className="section-heading fade-up delay-1">
@@ -19,17 +20,20 @@ export default function About() {
           </h2>
         </div>
 
+        {/* ── BODY: bio left, focus areas right ── */}
         <div className="about-two-col fade-up delay-2">
+
+          {/* LEFT — bio + badges */}
           <div>
             <p className="about-bio">
-              I spend most of my time figuring out <strong>why things break</strong> before building fixes. 
-              Six years across edtech and SaaS gave me a ground-level view of how users actually behave — 
+              I spend most of my time figuring out <strong>why things break</strong> before building fixes.
+              Six years across edtech and SaaS gave me a ground-level view of how users actually behave —
               not how we assume they do.
             </p>
             <p className="about-bio">
-              My work sits at the intersection of <strong>product thinking and operational reality</strong>. 
-              I&apos;ve built 0→1 concepts across fintech, marketplace trust, and quick commerce — 
-              from problem framing to prototype. Currently pursuing PM roles where 
+              My work sits at the intersection of <strong>product thinking and operational reality</strong>.
+              I&apos;ve built 0→1 concepts across fintech, marketplace trust, and quick commerce —
+              from problem framing to prototype. Currently pursuing PM roles where
               <strong> discovery and systems thinking</strong> are valued over feature velocity.
             </p>
             <div className="about-badges" style={{ marginTop: '1.5rem' }}>
@@ -42,6 +46,7 @@ export default function About() {
             </div>
           </div>
 
+          {/* RIGHT — focus areas */}
           <div>
             <p className="section-label-col" style={{ marginBottom: '1.25rem' }}>Focus areas</p>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -75,6 +80,7 @@ export default function About() {
               ))}
             </div>
           </div>
+
         </div>
 
       </div>
