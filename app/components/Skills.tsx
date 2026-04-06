@@ -77,13 +77,13 @@ export default function Skills() {
                     key={item}
                     style={{
                       fontFamily: 'var(--font-condensed)',
-                      fontSize: '0.72rem',
-                      fontWeight: 600,
+                      fontSize: '0.9rem',
+                      fontWeight: 700,
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
                       color: 'var(--text2)',
                       border: '1px solid var(--border)',
-                      padding: '0.3rem 0.75rem',
+                      padding: '0.4rem 1rem',
                       transition: 'color 0.2s, border-color 0.2s',
                       cursor: 'default',
                     }}

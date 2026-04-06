@@ -3,14 +3,14 @@
 import { useEffect, useState } from 'react';
 
 const CYCLE_WORDS = [
-  'PRODUCT THINKING',
-  'SYSTEMS DESIGN',
-  'USER DISCOVERY',
-  'FINTECH',
-  'TRUST & SAFETY',
-  'QUICK COMMERCE',
-  'AI INFRASTRUCTURE',
+  'DISCOVER. VALIDATE. SHIP.',
+  'USER FIRST. ALWAYS.',
   '0→1 BUILDER',
+  'KILL THE FRICTION',
+  'METRICS OVER OPINIONS',
+  'RESEARCH-LED PM',
+  'FROM INSIGHT TO IMPACT',
+  'ASK WHY FIRST',
 ];
 
 const STATS = [
@@ -79,7 +79,7 @@ export default function Hero() {
         setWordIndex((i) => (i + 1) % CYCLE_WORDS.length);
         setAnimating(false);
       }, 400);
-    }, 2200);
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
@@ -90,9 +90,8 @@ export default function Hero() {
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
 
         {/* ── TOP BAR ── */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6rem 3rem 0' }}>
-          <p className="hero-eyebrow fade-up">Product Manager · Kerala, India</p>
-          <div className="fade-up delay-1" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', padding: '6rem 3rem 0' }}>
+          <div className="fade-up" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <span style={{
               width: 6, height: 6, borderRadius: '50%', background: '#22c55e',
               boxShadow: '0 0 8px rgba(34,197,94,0.7)', display: 'inline-block', animation: 'dot-pulse 2s infinite',

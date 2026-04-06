@@ -16,7 +16,7 @@ const EXPERIENCE: ExperienceEntry[] = [
     role: 'Independent PM & Product Designer',
     period: 'Aug 2024 – Present',
     bullets: [
-      'Built 4 end-to-end product case studies across fintech, marketplace trust, escrow, and quick commerce — each validated through primary user research (surveys + interviews) and structured problem framing.',
+      'Built 5 end-to-end product case studies across fintech, marketplace trust, escrow, and quick commerce — each validated through primary user research (surveys + interviews) and structured problem framing.',
       'Designed interactive prototypes using Lovable and Google AI Studio, published publicly for recruiter and peer review.',
       'Completed AI Product Manager certification (HelloPM, 2026) and Generative AI Mastermind (OutSkill, 2025).',
     ],
