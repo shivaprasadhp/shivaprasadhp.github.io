@@ -1,21 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
-const CYCLE_WORDS = [
-  'DISCOVER. VALIDATE. SHIP.',
-  'USER FIRST. ALWAYS.',
-  '0→1 BUILDER',
-  'KILL THE FRICTION',
-  'METRICS OVER OPINIONS',
-  'RESEARCH-LED PM',
-  'FROM INSIGHT TO IMPACT',
-  'ASK WHY FIRST',
-];
-
 const STATS = [
   { num: '6+', label: 'Years cross-functional', sub: 'Edtech · SaaS · B2B across 4 companies' },
-  { num: '5',  label: 'Case studies built',     sub: 'Fintech · Marketplace · Escrow · Quick Commerce · AI Infra' },
+  { num: '5+', label: 'Product systems designed & validated', sub: 'Fintech · Marketplace · Escrow · Quick Commerce · AI Infra' },
   { num: '4',  label: 'Domains explored',       sub: 'Personal Finance · Trust & Safety · Hyperlocal · AI Infrastructure' },
   { num: '2',  label: 'Certifications',         sub: 'AI PM · HelloPM 2026 + Gen AI Mastermind · OutSkill' },
 ];
@@ -69,20 +56,6 @@ function ToolItem({ name, icon }: { name: string; icon: string | null }) {
 }
 
 export default function Hero() {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimating(true);
-      setTimeout(() => {
-        setWordIndex((i) => (i + 1) % CYCLE_WORDS.length);
-        setAnimating(false);
-      }, 400);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section id="hero">
 
@@ -162,29 +135,6 @@ export default function Hero() {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* ── CYCLING WORD BAR ── */}
-        <div style={{
-          borderTop: '1px solid var(--border)', overflow: 'hidden',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          minHeight: '120px', background: 'var(--surface)', position: 'relative',
-        }}>
-          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: 'var(--accent)' }} />
-          <span style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(3.5rem, 8vw, 7rem)',
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
-            color: 'var(--text)',
-            lineHeight: 1,
-            opacity: animating ? 0 : 1,
-            transform: animating ? 'translateY(12px)' : 'translateY(0)',
-            transition: 'opacity 0.35s ease, transform 0.35s ease',
-            whiteSpace: 'nowrap',
-          }}>
-            {CYCLE_WORDS[wordIndex]}
-          </span>
         </div>
 
         {/* ── TOOLS MARQUEE ── */}

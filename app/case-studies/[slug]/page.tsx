@@ -6,6 +6,7 @@ const CASE_ORDER = [
   'surelock',
   'local-ai-agent-orchestrator',
   'swiggy-instamart',
+  'screenly-ai',
 ];
 
 export function generateStaticParams() {

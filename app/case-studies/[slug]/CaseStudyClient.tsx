@@ -23,6 +23,10 @@ const CASE_STUDIES: Record<string, { title: string; embedUrl: string }> = {
     title: 'Swiggy Instamart',
     embedUrl: 'https://gamma.app/embed/1nj9afa2eo5lg8k',
   },
+  'screenly-ai': {
+    title: 'Screenly AI',
+    embedUrl: 'https://gamma.app/embed/8ama4qehz6hpduq',
+  },
 };
 
 const CASE_ORDER = [
@@ -31,6 +35,7 @@ const CASE_ORDER = [
   'surelock',
   'local-ai-agent-orchestrator',
   'swiggy-instamart',
+  'screenly-ai',
 ];
 
 export default function CaseStudyClient({ slug }: { slug: string }) {
