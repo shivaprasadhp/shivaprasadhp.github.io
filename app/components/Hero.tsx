@@ -125,7 +125,7 @@ export default function Hero() {
                 onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }}>
                 See Case Studies →
               </a>
-              <a href="/Shivaprasad-HP.pdf" download className="link-muted">Download Resume ↓</a>
+              <a href="/Shivaprasad HP.pdf" download className="link-muted">Download Resume ↓</a>
             </div>
 
             <div className="hero-companies fade-up delay-2" style={{ marginTop: '2.5rem' }}>
